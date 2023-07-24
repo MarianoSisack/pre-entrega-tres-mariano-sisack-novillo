@@ -1,0 +1,190 @@
+
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+
+
+/*header*/
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    .menu{
+        font-family: $fuente-principal;
+        background-color: $color-secundario;
+        .submenu{
+            ul{
+                li{
+                    
+                    font-weight: bold;
+                    border-radius: 5px;
+                    transition: 0.3s;
+                }
+                li:hover{ 
+                    background-color:rgb(94, 94, 37);
+                    color:rgb(240, 240, 186);
+                    transition: 0.5s;
+                }
+            }
+        }
+        .centrar{            
+            .logo{                
+                img{
+                    height: 3rem;
+                    width: 3rem;                    
+                }                       
+            }
+        }        
+    }
+}
+/*main*/
+main{
+    font-family: $fuente-principal;
+    background-color: $color-principal;
+    h1{
+        @extend %estilos-h1;
+    }
+    h2{
+        @extend %estilos-h1;           
+    }
+    height: 90vh;
+    .contenedor{
+        height: 70vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 30% 50%;
+        margin: 1rem 3rem 0rem 3rem;
+        gap: 1rem;
+        .vivero-dos{
+            display: none;
+        }
+        .vivero-tres{
+            display: none;
+        }
+        div{
+            p{
+                align-self: flex-end;
+                color: rgb(94, 94, 37);
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0px 15px 15px rgba(168, 166, 166, 0.7);
+        }
+    }
+}
+
+/*footer*/
+
+footer{
+    background-color: $color-secundario;
+    height: 8vh;
+    display: flex;  
+    justify-content: space-around;
+    align-items: center;
+    p{
+        font-size: 0.7rem;            
+        color: rgb(136, 136, 105);                   
+    }
+    img{
+        width: 2rem;
+        height: 2rem;        
+    }         
+}
+
+/*mq tablet*/
+@media screen and (min-width: 600px){
+    header{
+        .menu{
+            .centrar{
+                .logo{
+                    img{
+                        height: 4rem;
+                        width: 4rem;
+                    }                
+                }            
+            }
+        }
+    }    
+    main{    
+        .contenedor{
+            grid-template-columns: 0.5fr 1fr;
+            grid-template-rows: 35% 50%;
+            gap: 3rem;
+            margin-top: 3rem;
+            .vivero-dos{
+                display: block;
+                grid-column: span 2;
+                
+            }  
+        }
+        }
+    footer{
+        div{
+            img{
+                width: 2rem;
+                height: 2rem;
+            }
+        }
+    }    
+}
+
+/*mq desktop*/
+@media screen and (min-width: 1024px){
+.menu{     
+    .submenu{
+        display: flex;        
+        .lista{
+            justify-content: space-evenly;
+        }
+    }
+}               
+       
+    main{
+        height: 130vh;
+        .contenedor{
+            margin-top: 2rem;
+            height: 100vh;
+            grid-template-columns:1fr 1fr 1fr ;
+            grid-template-rows: 35% 55%;
+            .vivero{
+                grid-column: span 2;
+            }
+            .vivero-dos{
+                grid-column: span 2;
+            }
+            .vivero-tres{
+                display: block;
+                grid-column: span 1;
+            }
+            div{
+                p{
+                font-size: 1.2rem;
+                font-weight: 600;
+                }
+            }
+            
+        }
+    }
+}
+footer{
+    div{
+        align-items: center;
+        img{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
+
+
+
+
+

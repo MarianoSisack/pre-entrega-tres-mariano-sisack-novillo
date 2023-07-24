@@ -1,0 +1,129 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+/*css variedades*/
+
+.main-tres{    
+    padding-bottom: 3rem;
+    height: 360vh;
+    font-family: $fuente-principal;
+    background-color: $color-principal;
+    h1{
+        @extend %estilos-h1;
+    }
+    h2{
+        @extend %estilos-h1;        
+    }
+    .variedades-cactus{
+        @include grid;
+        height: 340vh;        
+        }         
+        .especies{
+            @include grid-dos;
+
+            .img-desktop{
+                display: none;
+                img{
+                    display: none;
+                }
+            }
+            .img-mobile{                                               
+                img{
+                    @extend %estilos-img;
+                }
+            }
+                                                           
+            .cartelito{                
+                a{
+                    @extend %boton;
+                    box-shadow: 0px 8px 8px rgba(168, 166, 166, 0.7);
+                    transition: 0.5s;
+                }
+                a:hover{
+                    background-color:rgb(94, 94, 37);
+                    color:rgb(240, 240, 186);
+                    transition: 0.5s; 
+                }       
+            }    
+        
+    }    
+}
+
+/*mq tablet*/
+@media screen and (min-width: 600px){
+    .main-tres{
+        height: 135vh;
+        .variedades-cactus{
+            height: 105vh;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: 45% 45%;           
+            gap: 2rem;
+            
+            .especies{
+                .img-mobile{
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;   
+                    }
+                      
+                }
+                                                    
+            }                                                                
+        }        
+    }        
+}       
+    
+
+
+/*mq desktop*/
+@media screen and (min-width: 1024px){
+    .menu{     
+        .submenu{
+            display: flex;
+            justify-content: space-around;
+        }
+    }  
+    .main-tres{
+        height: 160vh;
+        .variedades-cactus{
+            height: 120vh;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 55%);
+            gap: 2rem;            
+            .especies{
+                display: grid;
+                grid-template-columns: 0.7fr 0.7fr;
+                grid-template-rows: 40% 40% 10;
+                .img-desktop{                    
+                    display: block;
+                    transition: 0.5s;                      
+                    img{
+                        display: block;
+                        margin-bottom: 0.5rem;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;                        
+                        border-radius: 8px;
+                        box-shadow: 0px 15px 15px rgba(168, 166, 166, 0.7);
+                    }
+                }
+                .img-desktop:hover{
+                    transform: scale(1.5);      
+                    transition: 0.5s;
+                       
+                }                                                                 
+                
+                .img-mobile{
+                    display: none;
+                }                
+                                        
+                .cartelito{
+                        grid-column: span 2;
+                        margin-bottom: 3rem;                    
+                }                                               
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+/*css contacto*/
+
+.main-cinco{
+    height: 100vh;
+    font-family: $fuente-principal;
+    h1{
+        @extend %estilos-h1;
+    }
+    h2{
+        @extend %estilos-h1;
+    }
+    .contacto{
+        height: 60vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50% 35%;
+        gap: 2rem;
+        margin: 2rem;
+        justify-content: center;
+        .telefono{
+            justify-content: center; 
+            display: flex;
+            gap: 1rem;
+            padding-left: 1rem;
+            .iconos{
+                img{
+                    width: 1rem;
+                    height: 1rem;
+                }                
+            }
+        }
+        p{
+            color: rgb(94, 94, 37);
+            font-size: 1rem;
+            font-weight: 600;
+            
+        }
+        .email{
+            justify-content: center; 
+            display: flex;
+            gap: 1rem;
+            padding-left: 1rem;
+            .iconos{
+                img{
+                    width: 1rem;
+                    height: 1rem;
+                }                
+            }
+        }
+        .ubicacion{
+            justify-content: center; 
+            display: flex;
+            gap: 1rem;
+            padding-left: 1rem;
+            .iconos{
+                img{
+                    width: 1rem;
+                    height: 1rem;
+                }                
+            }
+        }
+        .facebook{
+            justify-content: center; 
+            display: flex;
+            gap: 1rem;
+            padding-left: 1rem;
+            .iconos{
+                img{
+                    width: 1rem;
+                    height: 1rem;
+                }                
+            }
+        }
+        .instagram-contacto{
+            justify-content: center; 
+            display: flex;
+            gap: 1rem;
+            padding-left: 1rem;
+            .iconos{
+                img{
+                    width: 1rem;
+                    height: 1rem;
+                }                
+            }
+        }
+        .formulario{
+            form{     
+                display: flex; 
+                flex-direction: column;                      
+                color: rgb(94, 94, 37);
+                font-size: 1rem;
+                font-weight: 600;
+                
+                fieldset{
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    
+                    legend{
+                        text-align: center;
+                        @extend %estilos-h1;
+                    }
+                               
+                    .consulta{
+                        padding: 3rem;
+                    } 
+                    .enviar{                
+                    input{                        
+                        color: rgb(94, 94, 37);
+                        font-weight: 600;  
+                        background-color: #c0c081;
+                        border: none;
+                        border-radius: 5%;
+                        }                        
+                    }
+                }
+           }
+        }     
+        .mapa{
+            display: none;
+        }
+    }
+}
+
+/*mq tablet*/
+@media screen and (min-width: 600px){
+    .main-cinco{
+        height: 100vh;
+        .contacto{
+            display: grid;            
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 50% 50%;
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            
+            
+            .mapa{                
+                display: block;                              
+                grid-column: span 2;
+                padding-top: 6rem;
+                
+            }
+            
+        }
+    }
+    
+}
+

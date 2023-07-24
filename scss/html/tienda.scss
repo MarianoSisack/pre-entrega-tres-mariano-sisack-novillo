@@ -1,0 +1,120 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+/*css tienda*/
+
+.main-cuatro{
+    font-family: $fuente-principal;
+    height: 340vh;
+    h1{
+        @extend %estilos-h1;
+    }
+    h2{
+        @extend %estilos-h1;
+    }
+    
+    .variedades-cactus{
+        @include grid;
+        
+        .especies{
+            @include grid-dos; 
+                                           
+            img{
+                @extend %estilos-img;
+            }
+            .cartelito{
+                a{
+                    @extend %boton;
+                    box-shadow: 0px 8px 8px rgba(168, 166, 166, 0.7);
+                    transition: 0.5s;    
+                }
+                a:hover{
+                    background-color:rgb(94, 94, 37);
+                    color:rgb(240, 240, 186);
+                    transition: 0.5s; 
+                }  
+            }     
+            .carrito{                    
+                a{
+                    @extend %boton;
+                    box-shadow: 0px 8px 8px rgba(168, 166, 166, 0.7);
+                    transition: 0.5s;
+                }
+            }
+            .carrito:hover{
+                a{
+                    background-color:rgb(94, 94, 37);
+                    color:rgb(240, 240, 186);
+                    transition: 0.5s;
+                }           
+            }                
+        }
+    }
+}
+.pago{
+    font-family: 'Josefin Sans', sans-serif;
+    
+    background-color: $color-principal;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3{
+        text-align: center;
+        font-weight: bold;
+        color: rgb(94, 94, 37);
+    }
+    ul{
+        li{
+            color: rgb(94, 94, 37);
+            font-weight: bold;
+        }
+    }
+       
+}
+
+/*mq tablet*/
+@media screen and (min-width: 600px){
+    .main-cuatro{
+        height: 140vh;
+        .variedades-cactus{
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 50% 50%;
+            gap: 2rem;
+            padding: 2rem 2rem 4rem 2rem;
+            .especies{
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;    
+                }                
+            }
+        }
+    }
+}
+.pago{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   
+    
+}
+
+/*mq desktop*/
+@media screen and (min-width: 1024px){
+    .main-cuatro{
+        .variedades-cactus{
+            .especies{
+                img{
+                    transition: 0.5s; 
+                }
+                img:hover{
+                    transform: scale(1.5);      
+                    transition: 0.5s;
+                }                
+                
+            }
+        }
+    }
+}

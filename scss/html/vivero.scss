@@ -1,0 +1,126 @@
+@import "../utilidades/variables";
+@import "../utilidades/mixin";
+@import "../utilidades/extend";
+
+/*css vivero*/
+/*main*/
+
+.main-dos{
+    font-family: $fuente-principal;
+    background-color: $color-principal;
+    height: 320vh;
+    h1{
+        @extend %estilos-h1;
+    }
+    h2{
+        @extend %estilos-h1;
+    }
+    .main-vivero{
+        display: grid;
+        height: 90vh;
+        grid-template-columns: 1fr;
+        margin: 1rem 2rem 0rem 2rem;
+        gap: 1rem;
+        .texto{
+            padding-top: 2rem;
+            color: rgb(94, 94, 37);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        .texto-cinco{
+            display: none;
+        }
+        .img-produccion{
+            img{
+                @extend %estilos-img;  
+            }                                   
+        }                       
+    }        
+            
+               
+    
+}
+/*footer*/
+footer{
+    .contenedor-footer{
+        padding-bottom: 1rem;
+    }
+}
+
+/*mq tablet*/
+
+@media screen and (min-width: 600px){
+/*main*/
+    .main-dos{
+        height: 220vh;
+        .main-vivero{
+            margin-top: 2rem;
+            height: 120vh;
+            grid-template-columns: 0.7fr 1.3fr;
+            grid-template-rows: repeat(4, 30%);
+            gap: 6rem;
+            .texto{
+                text-align: center;
+            }
+        }
+    }
+
+}
+/*footer*/
+footer{
+    div{
+        img{
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+}
+
+/*mq desktop*/
+
+@media screen and (min-width: 1024px){
+/*main*/
+    .menu{     
+        .submenu{
+            display: flex;
+            justify-content: space-around;
+        }
+    }  
+    .main-dos{
+        height: 220vh;
+        
+        .main-vivero{
+            margin: 2rem 4rem 2rem 4rem;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 10% 55% 25% 40%;
+            .texto-uno{
+                grid-column: span 3;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+            .texto{
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+            .texto-dos{
+                display: none;
+            }
+            .texto-tres{
+                display: none;
+            }
+            .texto-cuatro{
+                display: none;
+            }
+            .texto-cinco{
+                display: block;
+
+            }
+            .cactus-variados{
+                grid-column: span 3;
+            }
+        }
+    }   
+}        
+            
+            
+ 
